@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React,{useState} from "react"
 import './App.css';
 
 function App() {
+  const arr1=["Anu","shabhu","lucky"]
+  const arr2=["Ammulu","shabheera","nicky"]
+  const arr3=["Gudia","Deep","Varsha"]
+  const[Button,setButton]=useState([]);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={()=>{
+        setButton(arr1)
+      }}>Button1
+      
+      </button>
+      <button id="button2" onClick={()=>{
+        setButton(arr2)
+      }}>Button2</button>
+      <button id="button3" onClick={()=>{
+        setButton(arr3)
+      }}>Button3</button>
+      {
+        Button.map((item,index)=>{
+          return(
+            <div>
+              <h1 key="index">{item}</h1>
+            </div>
+          )
+        })
+      }
+     
     </div>
   );
 }
